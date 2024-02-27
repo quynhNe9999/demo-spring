@@ -33,8 +33,8 @@ public class WebSecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.csrf().disable().authorizeRequests().antMatchers("/resources/**", "/registration")
 		.permitAll()
-		.antMatchers("/view/","/addSinhVien","/editSinhVien/{id}","/deleteSinhVien/{id}","/user/**","/customer/","/addCustomer","/editCustomer/{id}","/deleteCustomer/{id}","/upload").hasRole("ADMIN")
-		.antMatchers("/view/","/view?keyword=?","/view?page=0&size=5&keyword=?","/customer/","/customer?keyword=?","/customer?page=0&size=5&keyword=?").hasAnyRole("USER", "ADMIN")
+		.antMatchers("/view/**","/user/**","/customer/**","/upload").hasRole("ADMIN")
+		.antMatchers("/view/**","/customer/**").hasAnyRole("USER", "ADMIN")
 				.anyRequest().authenticated()
 				.and().formLogin()
 				.loginPage("/login")

@@ -53,7 +53,7 @@
 						<td>${sinhVien.name}</td>
 						<td>${sinhVien.email}</td>
 						<td>${sinhVien.address}</td>
-						 <td><img src="<c:url value='/image/display/' />${sinhVien.id}" class="card img-fluid" style="width:100px" alt=""/></td>
+						 <td><img src="<c:url value='' />${sinhVien.id}" class="card img-fluid" style="width:100px" alt=""/></td>
 						<%-- <td><c:if test="${not empty sinhVien.image}">
 								<img src="<c:url value='/view/${sinhVien.id}'/>" width="70"
 									height="70">
@@ -112,14 +112,8 @@
 
 	</div>
 	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#example').DataTable();
-        });
-    </script>
+    <script src="/js/product.js"></script>
+
 </body>
 
 </html>

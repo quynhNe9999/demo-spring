@@ -1,6 +1,5 @@
 package com.oneempower.auth.web;
 
-
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -46,7 +45,7 @@ public class ImageGalleryController {
 
 	@GetMapping(value = {"/home"})
 	public String addProductPage() {
-		return "imageHome";
+		return "index";
 	}
 
 	@PostMapping("/image/saveImageDetails")
@@ -101,7 +100,7 @@ public class ImageGalleryController {
 		}
 	}
 	
-	@GetMapping(" ")
+	@GetMapping("/image/display/{id}")
 	@ResponseBody
 	void showImage(@PathVariable("id") Long id, HttpServletResponse response, Optional<ImageGallery> imageGallery)
 			throws ServletException, IOException {
@@ -142,4 +141,5 @@ public class ImageGalleryController {
 		map.addAttribute("images", images);
 		return "images";
 	}
-}
+}	
+
